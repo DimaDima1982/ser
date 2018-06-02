@@ -1,6 +1,5 @@
 package com.entity;
 
-import com.entity.Validation;
 import lombok.*;
 
 import javax.persistence.*;
