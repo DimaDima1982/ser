@@ -3,9 +3,7 @@ package com.config;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -25,27 +23,27 @@ public class HibernateConfig {
     @Autowired
     private DataSource dataSource;
 
-    private Properties hibernateProperties(){
+    private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
-        properties.put("hibernate.temp.use_jdbc_metadata_defaults",false);
+        properties.put("hibernate.temp.use_jdbc_metadata_defaults", false);
         return properties;
     }
 
     @Bean
     @Autowired
-    public HibernateTransactionManager transactionManager(SessionFactory factory){
+    public HibernateTransactionManager transactionManager(SessionFactory factory) {
         HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(factory);
         return txManager;
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory(){
+    public LocalSessionFactoryBean sessionFactory() {
 
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setPackagesToScan(new String[]{"main.java.com.netcracker.Entity"}); //check it
+        sessionFactory.setPackagesToScan("main.java.com.netcracker.Entity"); //check it
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;

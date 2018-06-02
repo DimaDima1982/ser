@@ -13,7 +13,8 @@ import javax.persistence.*;
 @ToString
 public class FieldMap {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 

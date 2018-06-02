@@ -5,7 +5,7 @@ import com.entity.TabMapXLSX;
 
 import java.util.List;
 
-public interface TabMapXLSXInterfaceDao extends InterfaceDao <TabMapXLSX> {
+public interface TabMapXLSXInterfaceDao extends InterfaceDao<TabMapXLSX> {
     @Override
     void save(TabMapXLSX object);
 

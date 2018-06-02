@@ -19,18 +19,18 @@ public class TabMapXLSXDao extends AbstractDao implements TabMapXLSXInterfaceDao
 
     public List<TabMapXLSX> findAll() {
         Criteria criteria = getSession().createCriteria(TabMapXLSX.class);
-        return (List<TabMapXLSX>)criteria.list();
+        return (List<TabMapXLSX>) criteria.list();
     }
 
     public TabMapXLSX findById(int id) {
         Criteria criteria = getSession().createCriteria(TabMapXLSX.class);
         criteria.add(Restrictions.eq("id", id));
-        return (TabMapXLSX)criteria.uniqueResult();
+        return (TabMapXLSX) criteria.uniqueResult();
     }
 
     public void deleteById(int id) {
         Query query = getSession().createQuery("delete from  TabMapXLSX   where id = :id");
-        query.setInteger("id",id);
+        query.setInteger("id", id);
         query.executeUpdate();
 
     }
@@ -38,6 +38,6 @@ public class TabMapXLSXDao extends AbstractDao implements TabMapXLSXInterfaceDao
     public TabMapXLSX findByField(String field, String value) {
         Criteria criteria = getSession().createCriteria(TabMapXLSX.class);
         criteria.add(Restrictions.eq("name", value));
-        return (TabMapXLSX)criteria.uniqueResult();
+        return (TabMapXLSX) criteria.uniqueResult();
     }
 }

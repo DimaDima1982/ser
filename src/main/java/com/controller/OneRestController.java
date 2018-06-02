@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class OneRestController {
 
     @RequestMapping("/SomeUrl")
-    String doResp(){
+    String doResp() {
         return "all done";
     }
 
     @PostMapping("/doIt")
-    public String doRest(){
+    public String doRest() {
         return "wtfRESTdoesntWork";
     }
 }

@@ -5,7 +5,7 @@ import com.entity.ValidationManualData;
 
 import java.util.List;
 
-public interface ValidationManualDataInterfaceDao extends InterfaceDao <ValidationManualData> {
+public interface ValidationManualDataInterfaceDao extends InterfaceDao<ValidationManualData> {
     @Override
     void save(ValidationManualData object);
 

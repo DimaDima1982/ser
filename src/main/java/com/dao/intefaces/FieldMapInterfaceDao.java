@@ -5,7 +5,7 @@ import com.entity.FieldMap;
 
 import java.util.List;
 
-public interface FieldMapInterfaceDao extends InterfaceDao <FieldMap> {
+public interface FieldMapInterfaceDao extends InterfaceDao<FieldMap> {
     @Override
     void save(FieldMap object);
 

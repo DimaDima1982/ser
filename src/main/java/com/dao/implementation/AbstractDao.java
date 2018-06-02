@@ -8,17 +8,17 @@ public class AbstractDao {
 
 
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-    protected Session getSession(){
+    Session getSession() {
         return sessionFactory.getCurrentSession();
     }
 
-    public void persist(Object entity){
+    void persist(Object entity) {
         getSession().persist(entity);
     }
 
-    public void delete(Object entity){
+    public void delete(Object entity) {
         getSession().delete(entity);
     }
 }

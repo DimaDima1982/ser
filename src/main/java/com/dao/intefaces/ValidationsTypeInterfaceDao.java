@@ -4,7 +4,7 @@ import com.entity.ValidationsType;
 
 import java.util.List;
 
-public interface ValidationsTypeInterfaceDao extends InterfaceDao <ValidationsType> {
+public interface ValidationsTypeInterfaceDao extends InterfaceDao<ValidationsType> {
     @Override
     void save(ValidationsType object);
 

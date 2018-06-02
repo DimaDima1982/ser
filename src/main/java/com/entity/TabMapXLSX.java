@@ -14,7 +14,8 @@ import javax.persistence.*;
 @ToString
 public class TabMapXLSX {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
